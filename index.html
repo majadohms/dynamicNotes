@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <!-- Wichtig für GitHub Pages Projektseiten -->
+  <base href="/notiz-proto/">
+  <link rel="manifest" href="public/manifest.webmanifest" />
+  <title>notiz-proto – PWA (Vanilla JS)</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <strong>Klickbare Blöcke</strong>
+    <span class="grow"></span>
+    <button class="btn" id="installBtn" title="App installieren (PWA)" style="display:none">Installieren</button>
+    <button class="btn" id="addBtn">+ Block</button>
+    <button class="btn" id="exportBtn">Export</button>
+    <label class="btn" for="importFile" style="cursor:pointer">Import</label>
+    <input id="importFile" type="file" accept="application/json" style="display:none" />
+    <button class="btn" id="resetBtn">Reset</button>
+  </div>
+
+  <div class="wrap">
+    <div class="canvas" id="canvas"></div>
+    <aside class="panel" id="panel">
+      <header>
+        <div>Details</div>
+        <button class="btn" id="closePanel">Schließen</button>
+      </header>
+      <div class="body">
+        <div style="display:none" id="empty">Kein Block ausgewählt.</div>
+        <form id="form" style="display:none">
+          <div>
+            <label>Titel</label>
+            <input type="text" id="title" placeholder="Titel des Blocks" />
+          </div>
+          <div style="margin-top:.5rem">
+            <label>Notizen</label>
+            <textarea id="note" placeholder="Details, Links, To-Dos…"></textarea>
+          </div>
+          <div style="margin-top:.5rem">
+            <label>Farbe</label>
+            <input type="color" id="color" />
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:.5rem">
+            <button class="btn" id="deleteBtn" type="button" style="color:#c0392b">Block löschen</button>
+            <small>Auto-gespeichert</small>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <script src="src/app.js" defer></script>
+</body>
+</html>
