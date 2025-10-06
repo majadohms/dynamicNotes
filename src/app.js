@@ -9,8 +9,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 // Service Worker relativ (wir haben <base href="/notiz-proto/"> gesetzt)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('public/sw.js').catch(()=>{});
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
 }
+
 
 let nodes = load() || [
   n(80,80,'Idee','Erste Gedanken…','#60a5fa'),
@@ -105,3 +106,4 @@ function escapeHtml(s){ return s.replace(/[&<>\"']/g, c=>({"&":"&amp;","<":"&lt;
 // Init
 render(); select(nodes[0]?.id);
 canvas.addEventListener('click', ()=>{ selectedId=null; form.style.display='none'; empty.style.display='block' });
+
