@@ -1,0 +1,21 @@
+:root { --grid: 25px; --bg: #f7f7f8; --panel:#fff; --border:#e5e5e7 }
+body{ margin:0; font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:#111; background:var(--bg) }
+.topbar{ display:flex; align-items:center; gap:.5rem; padding:.5rem .75rem; border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0 }
+.grow{ flex:1 }
+.btn{ padding:.5rem .75rem; border:1px solid var(--border); border-radius:12px; background:#fff; cursor:pointer }
+.btn:hover{ box-shadow:0 1px 6px rgba(0,0,0,.06) }
+.wrap{ height:88vh; display:grid; grid-template-columns:1fr 320px }
+.canvas{ position:relative; overflow:hidden; background:
+  linear-gradient(0deg,transparent calc(var(--grid) - 1px), rgba(0,0,0,.04) var(--grid)),
+  linear-gradient(90deg,transparent calc(var(--grid) - 1px), rgba(0,0,0,.04) var(--grid));
+  background-size: var(--grid) var(--grid); background-color: var(--bg) }
+.block{ position:absolute; width:160px; min-height:90px; border-radius:10px; border:1px solid rgba(0,0,0,.15); box-shadow:0 3px 12px rgba(0,0,0,.08); padding:10px; cursor:grab; user-select:none }
+.block h4{ margin:0 0 .25rem; font-size:14px }
+.block p{ margin:0; font-size:12px; opacity:.8; max-height:56px; overflow:hidden }
+.panel{ border-left:1px solid var(--border); background:var(--panel); display:flex; flex-direction:column }
+.panel header{ display:flex; justify-content:space-between; align-items:center; padding:.5rem .75rem; border-bottom:1px solid var(--border) }
+.panel .body{ padding:.75rem; overflow:auto }
+label{ font-size:11px; text-transform:uppercase; color:#666 }
+input[type="text"], textarea, input[type="color"]{ width:100%; padding:.5rem .6rem; border:1px solid var(--border); border-radius:10px; font:inherit }
+textarea{ min-height:140px; resize:vertical }
+
